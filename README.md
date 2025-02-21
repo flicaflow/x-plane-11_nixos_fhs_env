@@ -5,7 +5,6 @@ X-Plane 11 does not run ntively on NixOS. To get it working we have to create a 
 ## How does it work
 
 1. Checkout this repo and enter the directory
-2. Download the **X-Plane 11** installer
-3. Enter the FHS environment by running `nix develop`
-4. Execute the installer `./X-Plane 11 Installer Linux`
+2. Enter the FHS environment by running `nix develop`
+3. Run `x-plane-11` this will start the installer and later the the program itself
 
