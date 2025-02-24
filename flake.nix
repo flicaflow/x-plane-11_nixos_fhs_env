@@ -10,7 +10,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       x-plane-11 = pkgs.stdenv.mkDerivation {
-        pname = "X-Plane 11";
+        pname = "X-Plane-11";
         version = "1";
 
          src = pkgs.fetchzip {
@@ -26,7 +26,7 @@
 
       };
       fhs = pkgs.buildFHSEnv {
-        name = "X-Plane 11";
+        name = "X-Plane-11";
         targetPkgs = pkgs: with pkgs; [
           x-plane-11
           libGL
@@ -44,14 +44,13 @@
           gtk2
           dbus
         ];
-        #runScript = "x-plane-11";
+        runScript = "x-plane-11";
       };
     in
       {
         devShells.${system}.default = fhs.env;
         packages.${system} = {
           default = fhs;
-          x-plane-11 = x-plane-11;
         };
       };
 }
